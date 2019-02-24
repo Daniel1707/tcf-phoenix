@@ -15,6 +15,6 @@ RUN bundle install
 COPY . $APP_HOME
 
 # Start server
-ENV PORT 4567
-EXPOSE 4567
+ENV PORT 4568
+EXPOSE 4568
 CMD ["ruby", "app.rb"]
