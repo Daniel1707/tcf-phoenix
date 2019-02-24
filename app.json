@@ -1,0 +1,13 @@
+{
+  "name": "Test Case Friendly",
+  "description": "Help to create test case",
+  "keywords": [
+    "test case",
+    "redis"
+  ],
+  "website": "https://github.com/Daniel1707/tcf-phoenix",
+  "repository": "https://github.com/Daniel1707/tcf-phoenix",
+  "addons": [
+    "heroku-redis"
+  ]
+}

@@ -4,6 +4,8 @@ services:
     image: redis
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
+    ports:
+    - "6379:6379"
   web:
     build: .
     command: ruby app.rb -o 0.0.0.0
@@ -14,4 +16,4 @@ services:
     depends_on:
       - redis
     environment:
-      - REDIS_URL=redis://redis
+      - REDIS_URL='redis://redis:6379'
