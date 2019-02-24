@@ -3,7 +3,7 @@ require 'redis'
 require_relative 'DependencyHelper'
 
 #set :bind, '0.0.0.0'
-#set :port, 4568
+#set :port, 4569
 
 redis = Redis.new(url: ENV['REDIS_URL'])
 
