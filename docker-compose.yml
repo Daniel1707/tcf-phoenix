@@ -4,8 +4,6 @@ services:
     image: redis
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
-    ports:
-    - "6379:6379"
   web:
     build: .
     command: ruby app.rb -o 0.0.0.0
