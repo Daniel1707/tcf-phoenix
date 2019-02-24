@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/tcf-phoenix
     ports:
-      - "4569:4569"
+      - "4567:4567"
     depends_on:
       - redis
     environment:

@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'redis'
 require_relative 'DependencyHelper'
 
 #set :bind, '0.0.0.0'
