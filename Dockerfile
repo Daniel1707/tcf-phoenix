@@ -17,4 +17,4 @@ COPY . $APP_HOME
 # Start server
 ENV PORT 4569
 EXPOSE 4569
-CMD ["ruby", "services/app.rb"]
+CMD ["ruby", "app.rb"]

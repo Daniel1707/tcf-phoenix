@@ -1,5 +1,5 @@
 require 'sinatra'
-require_relative '../DependencyHelper'
+require_relative 'DependencyHelper'
 
 #set :bind, '0.0.0.0'
 #set :port, 4569
@@ -15,7 +15,7 @@ post '/testcase/create' do
   content_type :json
 
   @request_payload = JSON.parse request.body.read
-  
+
   field_company_name = @request_payload.fetch('companyName', nil)
   field_test_case_name = @request_payload.fetch('testCaseName', nil)
   field_creator = @request_payload.fetch('creator', nil)

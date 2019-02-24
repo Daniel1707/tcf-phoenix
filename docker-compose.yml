@@ -6,7 +6,7 @@ services:
       - ./tmp/db:/var/lib/postgresql/data
   web:
     build: .
-    command: ruby services/app.rb -o 0.0.0.0
+    command: ruby app.rb -o 0.0.0.0
     volumes:
       - .:/tcf-phoenix
     ports:
