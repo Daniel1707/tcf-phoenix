@@ -1,2 +1,2 @@
-require './app'
+require './services/app'
 run Sinatra::Application
