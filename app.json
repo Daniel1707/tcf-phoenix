@@ -6,7 +6,6 @@
     "test case",
     "redis"
   ],
-  "mount_dir": "https://github.com/Daniel1707/tcf-phoenix",
   "repository": "https://github.com/Daniel1707/tcf-phoenix",
   "addons": [
     "heroku-redis"
