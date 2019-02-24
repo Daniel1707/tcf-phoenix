@@ -1,8 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    byebug (11.0.0)
-    cpf_cnpj (0.5.0)
+    json (2.2.0)
     mustermann (1.0.3)
     rack (2.0.6)
     rack-protection (2.0.5)
@@ -19,10 +18,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  byebug
-  cpf_cnpj
+  json
   redis
   sinatra
 
 BUNDLED WITH
-   1.17.2
+   1.17.3

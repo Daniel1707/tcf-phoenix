@@ -4,5 +4,4 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem 'sinatra'
 gem 'json'
-gem 'rest-client'
 gem 'redis'
