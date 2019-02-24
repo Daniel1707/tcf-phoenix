@@ -17,4 +17,4 @@ services:
       - redis
     environment:
       #- REDIS_URL=redis://redis
-      - REDIS_URL=127.0.0.1:6379
+      - REDIS_URL=redis-13266.c80.us-east-1-2.ec2.cloud.redislabs.com:13266
