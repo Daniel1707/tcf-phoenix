@@ -5,7 +5,7 @@ require_relative 'resources/check/ValidFields'
 
 require 'rubygems' if RUBY_VERSION < '1.9'
 
-require 'redis'
 require 'sinatra'
+require 'redis'
 require 'json'
 require 'rest-client'
