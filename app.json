@@ -1,11 +1,12 @@
 {
   "name": "Test Case Friendly",
+  "image": "ruby:2.6",
   "description": "Help to create test case",
   "keywords": [
     "test case",
     "redis"
   ],
-  "website": "https://github.com/Daniel1707/tcf-phoenix",
+  "mount_dir": "https://github.com/Daniel1707/tcf-phoenix",
   "repository": "https://github.com/Daniel1707/tcf-phoenix",
   "addons": [
     "heroku-redis"
