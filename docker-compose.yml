@@ -2,8 +2,6 @@ version: '3'
 services:
   redis:
     image: redis
-    ports:
-      - "6379:6379"
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
   web:
@@ -16,5 +14,4 @@ services:
     depends_on:
       - redis
     environment:
-      #- REDIS_URL=redis://redis
-      - REDIS_URL=redis-13266.c80.us-east-1-2.ec2.cloud.redislabs.com:13266
+      - REDIS_URL=redis://redis
