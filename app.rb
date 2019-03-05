@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'redis'
 require_relative 'DependencyHelper'
-require_relative 'GenerateDocument'
 
 #set :bind, '0.0.0.0'
 #set :port, 4569
@@ -10,7 +9,7 @@ redis = Redis.new(url: ENV['REDIS_URL'])
 
 get '/testcase/health' do
   content_type :json
-  {'response': 'System is up =D'}.to_json
+  {'response': 'System is up =]'}.to_json
 end
 
 post '/testcase/create' do
@@ -18,15 +17,17 @@ post '/testcase/create' do
 
   @request_payload = JSON.parse request.body.read
 
-  field_company_name = @request_payload.fetch('companyName', nil)
-  field_test_case_name = @request_payload.fetch('testCaseName', nil)
-  field_creator = @request_payload.fetch('creator', nil)
-  field_project = @request_payload.fetch('project', nil)
+  company_name = @request_payload.fetch('companyName', nil)
+  test_case_name = @request_payload.fetch('testCaseName', nil)
+  creator = @request_payload.fetch('creator', nil)
+  project = @request_payload.fetch('project', nil)
+  description = @request_payload.fetch('description', nil)
 
-  halt(401, { message:"companyName can not be blank"}.to_json) if field_company_name.nil?
-  halt(401, { message:"testCaseName can not be blank"}.to_json) if field_test_case_name.nil?
-  halt(401, { message:"creator can not be blank"}.to_json) if field_creator.nil?
-  halt(401, { message:"team can not be blank"}.to_json) if field_project.nil?
+  halt(401, { message:"companyName can not be blank"}.to_json) if company_name.nil?
+  halt(401, { message:"testCaseName can not be blank"}.to_json) if test_case_name.nil?
+  halt(401, { message:"creator can not be blank"}.to_json) if creator.nil?
+  halt(401, { message:"team can not be blank"}.to_json) if project.nil?
+  halt(401, { message:"description can not be blank"}.to_json) if description.nil?
 
   @request_payload['id'] = redis.keys.count
 
@@ -49,7 +50,7 @@ get '/testcase/:id' do
   response
 end
 
-put '/testcase/:id' do
+put '/testcase/step/:id' do
   content_type :json
 
   id = params["id"]
@@ -76,6 +77,8 @@ get '/testcase/generateDocument/:id' do
   documentName = GenerateDocument.create_pdf(id)
 
   send_file "testCase/#{documentName}", :filename => documentName, :type => 'Application/pdf'
+
+  GenerateDocument.delete_file(documentName)
 
   status 200
 end

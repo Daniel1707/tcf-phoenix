@@ -1,7 +1,7 @@
 Dir[File.join(File.dirname(__FILE__), './pages/*.rb')].each { |file| require file }
 
-require_relative 'GenerateDocument'
-require_relative 'Database'
+require_relative 'resources/document/GenerateDocument'
+require_relative 'resources/Database'
 
 require 'rubygems' if RUBY_VERSION < '1.9'
 

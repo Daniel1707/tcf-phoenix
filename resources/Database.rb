@@ -1,5 +1,5 @@
 require 'redis'
-require_relative 'DependencyHelper'
+require_relative '../DependencyHelper'
 
 class Database
   @redis = Redis.new(url: ENV['@redis_URL'])
