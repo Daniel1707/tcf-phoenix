@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    date (2.0.0)
     json (2.2.0)
     mustermann (1.0.3)
     pdf-core (0.7.0)
@@ -23,6 +24,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  date
   json
   prawn
   redis
